@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  SpotifyIOSUIKit
+//  SpotifyUIKitTutorial
 //
-//  Created by Ivan Christian on 05/06/22.
+//  Created by Ivan Christian on 02/06/22.
 //
 
 import UIKit
@@ -10,10 +10,28 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window : UIWindow?
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if(AuthManager.shared.isSignedIn){
+            window.rootViewController = TabBarViewController()
+        }else{
+            let navVC = UINavigationController(rootViewController: WelcomeViewController())
+            navVC.navigationBar.prefersLargeTitles = true
+            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window.rootViewController = navVC
+        }
+        
+        window.makeKeyAndVisible()
+        self.window = window
+        AuthManager.shared.refreshAccessToken { success in
+            print(success)
+        }
         return true
     }
 
