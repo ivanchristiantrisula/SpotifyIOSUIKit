@@ -33,6 +33,10 @@
 		86DC7921284C7B3F00F84F03 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC7909284C7B3F00F84F03 /* PlaylistViewController.swift */; };
 		86DC7922284C7B3F00F84F03 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC790A284C7B3F00F84F03 /* ProfileViewController.swift */; };
 		86DC7923284C7B3F00F84F03 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC790B284C7B3F00F84F03 /* SettingsViewController.swift */; };
+		86F45D55284E6A5F0054AD3E /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F45D54284E6A5F0054AD3E /* NewReleasesResponse.swift */; };
+		86F45D57284E6B340054AD3E /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F45D56284E6B340054AD3E /* APIImage.swift */; };
+		86F45D59284E75170054AD3E /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F45D58284E75170054AD3E /* FeaturedPlaylistsResponse.swift */; };
+		86F45D5B284E78780054AD3E /* RecomendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F45D5A284E78780054AD3E /* RecomendedGenresResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		86DC7909284C7B3F00F84F03 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		86DC790A284C7B3F00F84F03 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		86DC790B284C7B3F00F84F03 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		86F45D54284E6A5F0054AD3E /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
+		86F45D56284E6B340054AD3E /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
+		86F45D58284E75170054AD3E /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
+		86F45D5A284E78780054AD3E /* RecomendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedGenresResponse.swift; sourceTree = "<group>"; };
 		B57B4763380DCFCEE2760EF1 /* Pods_SpotifyIOSUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyIOSUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,7 +102,6 @@
 				67E89B001556FB675DE2557B /* Pods-SpotifyIOSUIKit.debug.xcconfig */,
 				06DD12BBD2BDBD59C4C06137 /* Pods-SpotifyIOSUIKit.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,6 +163,10 @@
 				86DC78F4284C7B3E00F84F03 /* AudioTrack.swift */,
 				86DC78F5284C7B3E00F84F03 /* AuthResponse.swift */,
 				86726D6A284CF4DF00730166 /* SettingsModel.swift */,
+				86F45D54284E6A5F0054AD3E /* NewReleasesResponse.swift */,
+				86F45D56284E6B340054AD3E /* APIImage.swift */,
+				86F45D58284E75170054AD3E /* FeaturedPlaylistsResponse.swift */,
+				86F45D5A284E78780054AD3E /* RecomendedGenresResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +347,8 @@
 				86DC791B284C7B3F00F84F03 /* HomeViewController.swift in Sources */,
 				86DC790C284C7B3F00F84F03 /* APICaller.swift in Sources */,
 				86DC7919284C7B3F00F84F03 /* SearchViewController.swift in Sources */,
+				86F45D55284E6A5F0054AD3E /* NewReleasesResponse.swift in Sources */,
+				86F45D57284E6B340054AD3E /* APIImage.swift in Sources */,
 				86DC7912284C7B3F00F84F03 /* AudioTrack.swift in Sources */,
 				86DC791F284C7B3F00F84F03 /* SearchResultViewController.swift in Sources */,
 				86DC7917284C7B3F00F84F03 /* SceneDelegate.swift in Sources */,
@@ -349,6 +362,8 @@
 				86DC791A284C7B3F00F84F03 /* LibraryViewController.swift in Sources */,
 				86DC7922284C7B3F00F84F03 /* ProfileViewController.swift in Sources */,
 				86DC791E284C7B3F00F84F03 /* PlayerViewController.swift in Sources */,
+				86F45D59284E75170054AD3E /* FeaturedPlaylistsResponse.swift in Sources */,
+				86F45D5B284E78780054AD3E /* RecomendedGenresResponse.swift in Sources */,
 				86DC7920284C7B3F00F84F03 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AXD33J252A;
@@ -516,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AXD33J252A;

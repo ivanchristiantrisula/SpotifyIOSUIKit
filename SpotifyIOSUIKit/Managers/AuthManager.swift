@@ -84,7 +84,7 @@ final class AuthManager {
             return
         }
         if shouldRefreshToken {
-            refreshAccessToken{ [weak self] success in
+            refreshIfNeeded{ [weak self] success in
                 if let token = self?.accessToken, success {
                     completion(token)
                     
@@ -96,11 +96,11 @@ final class AuthManager {
         }
     }
     
-    public func refreshAccessToken(completion: @escaping(Bool) -> Void) {
+    public func refreshIfNeeded(completion: ((Bool) -> Void)?) {
         guard !refreshingToken else {return}
         
         guard shouldRefreshToken else{
-            completion(true)
+            completion?(true)
             return
         }
         guard let refreshToken = self.refreshToken else {
@@ -129,7 +129,7 @@ final class AuthManager {
         
         guard let base64Token = data?.base64EncodedString() else {
             print("error base64 token")
-            completion(false)
+            completion?(false)
             return
         }
         request.setValue("Basic \(base64Token)", forHTTPHeaderField: "Authorization")
@@ -138,17 +138,17 @@ final class AuthManager {
             self?.refreshingToken = false
             
             guard let data = data, error == nil else {
-                completion(false)
+                completion?(false)
                 return
             }
             do{
                 let result = try JSONDecoder().decode(AuthResponse.self, from: data)
                 self?.onRefreshBlocks.forEach{$0(result.access_token)}
                 self?.cacheToken(result : result)
-                completion(true)
+                completion?(true)
             }catch{
                 print("ERROR" + error.localizedDescription)
-                completion(false)
+                completion?(false)
             }
         }
         

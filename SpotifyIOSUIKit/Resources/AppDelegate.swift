@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         if(AuthManager.shared.isSignedIn){
+            AuthManager.shared.refreshIfNeeded(completion: nil)
             window.rootViewController = TabBarViewController()
         }else{
             let navVC = UINavigationController(rootViewController: WelcomeViewController())
@@ -29,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window.makeKeyAndVisible()
         self.window = window
-        AuthManager.shared.refreshAccessToken { success in
+        AuthManager.shared.refreshIfNeeded { success in
             print(success)
         }
         return true
